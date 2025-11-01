@@ -251,10 +251,14 @@ function onPlayerMove(data) {
 }
 
 function onNewPlayer(data) {
+  console.log("//////////////");
+  console.log(socket.id);
+  console.log("//////////////");
   const { playerId, color, name } = data;
   // If this notification is about me, store my id and color
   if (playerId === socket.id) {
     myPlayerId = playerId;
+
     myColor = color;
     if (playerElement) playerElement.style.background = myColor;
     // Initialize me at GO
