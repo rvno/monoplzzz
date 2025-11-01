@@ -1,6 +1,4 @@
 const express = require("express");
-const path = require("path");
-const socket = require("socket.io");
 
 const app = express();
 const port = Number(process.env.PORT || 3000);
@@ -10,6 +8,7 @@ app.use(express.static("public"));
 
 console.log(`Server is listening on port ${port}`);
 
+const socket = require("socket.io");
 const io = socket(server);
 
 // Track connected players and board reviews
