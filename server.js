@@ -1,10 +1,11 @@
 const express = require("express");
-
+const path = require("node:path");
 const app = express();
 const port = Number(process.env.PORT || 3000);
 const server = app.listen(port);
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "public/")));
+// app.use(express.static("public"));
 
 console.log(`Server is listening on port ${port}`);
 
